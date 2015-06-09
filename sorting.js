@@ -121,6 +121,11 @@ function shell1(arr) {
 
 
 //----------- MERGE SORT
+//2 parts
+	// merging - joins two files to make one file
+	// selection - splits a lit into two lists
+//this algo used for sorting linked list
+
 
 
 
