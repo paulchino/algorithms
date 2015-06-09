@@ -76,6 +76,52 @@ function insertion(arr) {
 
 //---------- SHELL SORT
 //fastest of all O(n^2) sorting algos
+//gap (h) large enough, but not larger than the array size
+//when h=1 its the same a insertion sort
+
+function shell(arr) {
+	var temp, i, j;
+
+	//assume initial gap that is half length
+	var gap = Math.floor(arr.length/2);
+	while (gap > 0) {
+		for(i = gap; i < arr.length; i++) {
+			temp = arr[i];
+			for (j = i; j >= gap && arr[j-gap] > temp; j-= gap ) {
+				//swap
+				arr[j] = arr[j-gap];
+			}
+			arr[j] = temp;
+		}
+		gap = Math.floor(gap/2);
+	}
+	return arr
+}
+
+//using while loop, similar to insertion
+function shell1(arr) {
+	var temp, i, j;
+	//assume initial gap that is half length
+	var gap = Math.floor(arr.length/2);
+	while (gap > 0) {
+		for(i = gap; i < arr.length; i++) {
+			temp = arr[i];
+			j = i;
+			while(j >= gap && arr[j-gap] > temp) {
+				//swap
+				arr[j] = arr[j - gap];
+				j--;
+			}
+			arr[j] = temp;
+		}
+		gap = Math.floor(gap/2);
+	}
+	return arr
+}
+
+
+//----------- MERGE SORT
+
 
 
 
