@@ -65,7 +65,8 @@ function insertion(arr) {
 	for (var i = 1; i < arr.length; i++) {
 		v = arr[i];
 		j = i;
-		while(arr[j-1] > v && j>0) {
+		while (arr[j-1] > v && j > 0) {
+			//swap
 			arr[j] = arr[j-1];
 			j--;
 		}
@@ -123,11 +124,46 @@ function shell1(arr) {
 //----------- MERGE SORT
 //2 parts
 	// merging - joins two files to make one file
-	// selection - splits a lit into two lists
+	// selection - splits an array into two lists
 //this algo used for sorting linked list
 
+	//mergeSort takes takes the array, first index, and last index
+function mergeSort (arr) {    
+    if (arr.length < 2) return arr;
+    
+    var mid = Math.floor(arr.length /2);
+    var subLeft = mergeSort(arr.slice(0,mid));
+    var subRight = mergeSort(arr.slice(mid));
+    
+    return merge(subLeft, subRight);
+}
 
 
+var x = [-2,3,9];
+var y = [12,24,36];
+function merge(arr1, arr2) {
+	var result = [];
+	var left_i = 0;
+	var right_i = 0;
+
+	while (left_i < arr1.length && right_i < arr2.length) {
+		if (arr1[left_i] < arr2[right_i]) {
+			result.push(arr1[left_i++]);
+		} else {
+			result.push(arr2[right_i++]);
+		}
+	}
+
+	//used when the two arrays are not the same length
+	while (left_i < arr1.length) {
+		result.push(arr1[left_i++]);
+	}
+
+	while (right_i < arr2.length) {
+		result.push(arr2[right_i++]);
+	}
+	return result
+}
 
 
 
