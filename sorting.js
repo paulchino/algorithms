@@ -139,8 +139,6 @@ function mergeSort (arr) {
 }
 
 
-var x = [-2,3,9];
-var y = [12,24,36];
 function merge(arr1, arr2) {
 	var result = [];
 	var left_i = 0;
@@ -164,6 +162,7 @@ function merge(arr1, arr2) {
 	}
 	return result
 }
+
 
 
 
