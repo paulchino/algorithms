@@ -87,6 +87,15 @@ function maxBST(node) {
 	return node.value
 }
 
+//find min depth of BST. 
+//min depth defined by left and right left == null
+function minDepth(root) {
+	if ( root == null ) return 0;
+	if ( root.left == null ) return minDepth(root.right) + 1;
+	if ( root.right == null ) return minDepth(root.left) + 1;
+	return Math.min(minDepth(root.right), minDepth(root.left)) + 1;
+}
+
 
 var exBST = new BinarySearchTree();
 exBST.push(40);
