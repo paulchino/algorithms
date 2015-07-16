@@ -103,13 +103,35 @@ function containsDuplicates(arr) {
 	return flag
 }
 
-//Count the number of prime numbers less than a non-negative number, n.
+//determine if number is prime
+//3
+function prime(n) {
+	if (n <= 2 ) return false;
+	if (n == 3 ) return true; 
+	for (var i = 2 ; i <= n/2; i++) {
+		if (n % i == 0) {
+			return false
+		}
+	}
+	return true
+}
 
+var countPrimes = function(n) {
+    var count = 0;
+    for (var i = n; i >=2; i-- ) {
+        if (prime(i)) {
+            count++;
+        }
+    }
+    return count
+};
 
-
-
-
-
-
+//valid palindrome
+//Given a string, determine if it is a palindrome,
+//considering only alphanumeric characters and ignoring cases.
+function isPalindrome(s) {
+	var str = s.replace(/\W/g,"").toLowerCase();
+	return str == str.split("").reverse().join("")
+}
 
 
