@@ -75,6 +75,15 @@ var chap_1 = (function() {
 	}
 })();
 
+//see linked_list.js for most solutions
+var chap_2 = (function() {
+	return {
+
+	}
+})();
+
+
+
 
 
 
