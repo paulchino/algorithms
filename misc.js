@@ -240,6 +240,8 @@ function find_deviation(v, d) {
 }
 
 
+
+
 //[-10,3,4] with size = 2 --> [-10, 3] and [3,4] max difference is 13
 
 var subtest1 = [0], subtest2 = [0,1], subtest = [-10,3,4,1000]
