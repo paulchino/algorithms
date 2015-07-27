@@ -8,7 +8,6 @@
 //4 number of nodes
 //5 max depth of tree
 
-
 //create a node
 function Node(val) {
 	this.value = val;

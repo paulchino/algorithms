@@ -163,6 +163,43 @@ function merge(arr1, arr2) {
 	return result
 }
 
+//---- Quick Sort
+function swap(arr, i_1, i_2) {
+	var temp = arr[i_2];
+	arr[i_2] = arr[i_1];
+	arr[i_1] = temp;
+}
+
+
+function quickSort(arr, start, end) {
+	if ( start < end ) {
+		pIndex = partition(arr, start, end);
+		quickSort(arr, start, pIndex-1);
+		quickSort(arr, pIndex+1, end);
+	}
+	return arr
+}
+
+function partition(arr, start, end) {
+	var pivot = arr[end];
+	var pIndex = start;
+
+	for (var i = start; i < end; i ++) {
+		if (arr[i] <= pivot) {
+			//swap arr[i] with arr[pIndex]
+			swap(arr, i, pIndex);
+			pIndex++;
+		}
+	}
+	//swap pivot with pIndex
+	swap(arr, end, pIndex);
+	return pIndex
+}
+
+console.log(quickSort(arr1, 0, arr1.length-1));
+console.log(quickSort(arr2, 0, arr2.length-1));
+console.log(quickSort(arr3, 0, arr3.length-1));
+console.log(quickSort(arr4, 0, arr4.length-1));
 
 
 
